@@ -2,17 +2,16 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-// Middleware to parse JSON request body
+
 app.use(express.json());
 
-// In-memory books data
 let books = [
   { id: 1, title: "1984", author: "George Orwell" },
   { id: 2, title: "The Great Gatsby", author: "F. Scott Fitzgerald" }
 ];
 
 app.get("/", (req, res) => {
-  res.send("📚 Welcome to the Books API! Use /books to get started.");
+  res.send("Welcome to the Books API!.");
 });
 
 
@@ -54,7 +53,8 @@ app.delete("/books/:id", (req, res) => {
   res.json(deletedBook[0]);
 });
 
-// Start server
+
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
+
